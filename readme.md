@@ -35,7 +35,7 @@ function CTAbutton(props) {
 
 ### Why React
 
-1.) Declarative:
+#### 1.) **Declarative**:
 
 React want you to exactly declare how your components work under the hood
 
@@ -67,7 +67,9 @@ function CTAbutton(props) {
 }
 ```
 
-2.) Composable: we can write code in one place and export it and reuse it anywhere in our app
+#### 2.) **Composable**:
+
+we can write code in one place and export it and reuse it anywhere in our app
 
 ```js
 // react library is the blueprint, i.e. the instructions for the app
