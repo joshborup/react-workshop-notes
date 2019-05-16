@@ -98,6 +98,19 @@ this.setState({
 const [count, setCount] = useState(10);
 ```
 
+```jsx
+// element created on first render
+const element = Counter();
+
+// after some event
+const newElement = Counter();
+diff(element, newElement);
+```
+
+React will store the last element it rendered in memory and compare it to the element when it is rendered again with new values
+
+React will only update the parts that have changed, which makes it extremely fast
+
 ## To Look at
 
 - Modules
