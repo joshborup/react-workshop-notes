@@ -81,7 +81,7 @@ import ReactDom from "react-dom";
 
 ### React State
 
-setState merges the object passed in with the current state object
+`setState` merges the object passed in with the current state object
 
 ```jsx
 this.state = {
@@ -92,7 +92,7 @@ this.setState({
 });
 ```
 
-useState will overide the current state with whatever is passed into the second child that get destructured from useState
+`useState` will overide the current state with whatever is passed into the second child that get destructured from `useState`
 
 ```jsx
 const [count, setCount] = useState(10);
