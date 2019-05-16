@@ -81,6 +81,8 @@ import ReactDom from "react-dom";
 
 ### React State
 
+#### 1.) Setting state
+
 `setState` merges the object passed in with the current state object
 
 ```jsx
@@ -97,6 +99,8 @@ this.setState({
 ```jsx
 const [count, setCount] = useState(10);
 ```
+
+#### 2.) what happens on render and state change
 
 ```jsx
 // element created on first render
