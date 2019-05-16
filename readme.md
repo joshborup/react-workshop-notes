@@ -85,19 +85,32 @@ import ReactDom from "react-dom";
 
 `setState` merges the object passed in with the current state object
 
+state is only declared once in the constructor of class components
+
 ```jsx
 this.state = {
-  count: 10
+  count: 10,
+  error: null
 };
 this.setState({
-  count: val
+  count: val,
+  error: null
 });
 ```
 
+you call useState for any new state values you need
+
 `useState` will overide the current state with whatever is passed into the second child that get destructured from `useState`
+
+can call `set[StateValue]` for as many values as you need updated
 
 ```jsx
 const [count, setCount] = useState(10);
+const [error, setError] = useState(null);
+function updateApp() {
+  setCount(20);
+  setError("some error");
+}
 ```
 
 #### 2.) what happens on render and state change
