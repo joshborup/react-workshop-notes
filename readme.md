@@ -79,13 +79,32 @@ import React from "react";
 import ReactDom from "react-dom";
 ```
 
-### **React Training Team Definitions**
+### React State
+
+setState merges the object passed in with the current state object
+
+```jsx
+this.state = {
+  count: 10
+};
+this.setState({
+  count: val
+});
+```
+
+useState will overide the current state with whatever is passed into the second child that get destructured from useState
+
+```jsx
+const [count, setCount] = useState(10);
+```
 
 ## To Look at
 
 - Modules
   - `react-icons/fa`
+  - `reach`
 
 ```js
 import { faPlus } from "react-icons/fa";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 ```
