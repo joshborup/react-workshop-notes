@@ -2,6 +2,37 @@
 
 ## **intro**
 
+**React Elements**:
+
+```js
+const reactElement = react.createElement(
+  "button",
+  { className: "custom-class", onClick: () => alert("Hey") },
+  "+ Add"
+);
+```
+
+can be written in JSX like this:
+
+```jsx
+<button onClick={() => alert("Hey")} className="custom-class">
+  + Add
+</button>
+```
+
+**components**:
+Composition is when you can reuse the code in a nicely packaged way, components are just functions that return code
+
+```jsx
+function CTAbutton(props) {
+  return (
+    <button>
+      {props.icon} {props.text}
+    </button>
+  );
+}
+```
+
 ### Why React
 
 1.) Declarative:
@@ -47,37 +78,6 @@ import ReactDom from "react-dom";
 ```
 
 ### **React Training Team Definitions**
-
-**React Elements**:
-
-```js
-const reactElement = react.createElement(
-  "button",
-  { className: "custom-class", onClick: () => alert("Hey") },
-  "+ Add"
-);
-```
-
-can be written in JSX like this:
-
-```jsx
-<button onClick={() => alert("Hey")} className="custom-class">
-  + Add
-</button>
-```
-
-**component**:
-Composition is when you can reuse the code in a nicely packaged way, components are just functions that return code
-
-```jsx
-function CTAbutton(props) {
-  return (
-    <button>
-      {props.icon} {props.text}
-    </button>
-  );
-}
-```
 
 ## To Look at
 
