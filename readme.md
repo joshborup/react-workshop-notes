@@ -21,6 +21,7 @@ can be written in JSX like this:
 ```
 
 **components**:
+
 Composition is when you can reuse the code in a nicely packaged way, components are just functions that return code
 
 ```jsx
