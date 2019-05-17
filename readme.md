@@ -2,6 +2,8 @@
 
 ## **intro**
 
+## Morning (day 1)
+
 **React Elements**:
 
 ```js
@@ -128,6 +130,101 @@ diff(element, newElement);
 React will store the last element it rendered in memory and compare it to the element when it is rendered again with new values
 
 React will only update the parts that have changed, which makes it extremely fast
+
+### Hooks and useState
+
+```js
+const states = [[4, fn], [10, fn]];
+const callCount = -1;
+
+function useState(defaultValue) {
+  const id = ++callCount;
+  if(states[id]) {
+      return states[id]
+  }
+  const setValue = newValue => {
+    // change state
+    states[id][0] = newValue;
+
+    // rerender
+    renderHook();
+  };
+  const arr = [defaultValue, setValue];
+  states.push(arr);
+  return arr;
+}
+
+import React from 'react'
+import CrappyRender from 'crappy-render-dom'
+CrappyRender(){
+    callCount = -1;
+    ReactDom.render(<MyCompWithUseState />, document.getElementById('id'))
+}
+```
+
+## Afternoon (day 1)
+
+### **useEffect**
+
+We should think in terms of state and not events
+let state change drive your application
+
+you can use useEffect as many times as you need for your component
+
+```js
+function myComponent({ someVal }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    doSomeSideEffect();
+  }, [someVal]);
+
+  useEffect(() => {
+    doDifferentSideEffect();
+  }, [count]);
+
+  return <div>{count}</div>;
+}
+```
+
+#### custom hook with effect
+
+custom title hook
+
+```js
+function useTitle(customTitle) {
+  const title = customTitle.substr(0, 20);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
+```
+
+#### Hook Cleanup
+
+any async action that runs in a useEffect before a component is unmounted
+
+```js
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+export default function(url) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    let current = true;
+    axios.get(url).then(response => {
+      if (current) {
+        setData(response.data);
+      }
+      return () => {
+        current = false;
+      };
+    });
+  }, [url]);
+  return { data, setData };
+}
+```
 
 ## To Look at
 
